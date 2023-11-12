@@ -30,15 +30,21 @@
     <div id="row_4">
         <button class="button" onclick="add(0)">0</button>
         <button class="button" id="equal" onclick="calculate()">=</button>
-        <button class="button" id="clear" onclick="clear_display()">C</button>
+        <button class="button" onclick="remove('/')">Del</button>
         <button class="button" onclick="add('/')">/</button>
-    </div>
+      </div>
+      <button class="button" id="clear" onclick="clear_display()">cls</button>
   </div>
 </div>
 
 <script>
+  let display= document.getElementById('display')
 function add(value) {
-  document.getElementById('display').value += value;
+ display.value += value;
+}
+function remove(value) {
+  // Removing the last character string slice method
+  display.value=display.value.slice(0, display.value.length - 1);
 }
 
 function calculate() {
